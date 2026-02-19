@@ -51,7 +51,7 @@ export function ProductModal({
                 initial={{ opacity: 0, y: 18, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                transition={{ type: 'spring', stiffness: 380, damping: 30 } as const}
                 className="paper-surface grain w-full max-w-4xl overflow-hidden rounded-3xl border border-zinc-200/70 shadow-soft"
               >
                 <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
