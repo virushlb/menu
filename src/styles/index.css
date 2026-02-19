@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-white text-zinc-900 font-sans;
+}
+
+/* Smooth scroll helps menu navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus outlines */
+*:focus-visible {
+  outline: 2px solid rgb(24 24 27 / 0.35);
+  outline-offset: 3px;
+}
+
+/* Warm, minimal restaurant background (light, clean) */
+.bg-restaurant {
+  background:
+    radial-gradient(900px circle at 18% 0%, rgba(234, 179, 8, 0.14), transparent 62%),
+    radial-gradient(900px circle at 86% 8%, rgba(14, 165, 233, 0.10), transparent 62%),
+    linear-gradient(to bottom, #f8f6f2, #f4f1ea);
+}
+
+/* A clean "menu sheet" surface */
+.paper-surface {
+  background:
+    radial-gradient(900px circle at 12% 0%, rgba(234, 179, 8, 0.08), transparent 70%),
+    linear-gradient(to bottom, rgba(255,255,255,0.97), rgba(255,255,255,0.93));
+}
+
+/* Subtle grain overlay for a printed menu feel (kept very light) */
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.10) 1px, transparent 0),
+    radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 0);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1px 1px;
+  border-radius: inherit;
+}
+
+/* Shimmer skeleton */
+.skeleton {
+  background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.07), rgba(0,0,0,0.04));
+  background-size: 700px 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -700px 0; }
+  100% { background-position: 700px 0; }
+}
+
+/* Hide scrollbars on category pills */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Multi-line truncation without Tailwind plugin */
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
